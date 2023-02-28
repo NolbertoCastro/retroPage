@@ -1,2 +1,570 @@
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";
+
+:root{
+    --beishe: #F8F2EE;
+    --red: #D44438;
+    --light-red:#EB4E4C;
+    --dark-blue: #13162A;
+    --grey: #576A6E;
+    --clear-night: #dac1ea;
+    --font: 'Jost', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+    font-family: var(--font);
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem; /* 16px */
+    background-color: var(--beishe);
+
+    > img{
+        display: flex;
+        width: 45vw;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+footer{
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: var(--dark-blue);
+
+    h3 {
+        font-size: 1.5rem;
+        color: var(--beishe);
+    }
+
+    img{
+        height: 30px;
+    }
+}
+
+nav{
+    display: flex;
+    
+    justify-content: space-evenly;
+    align-items: center;
+
+    ul{
+        display: flex;
+        width: 35vw;
+        height: 10vh;
+        justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
+    }    
+
+    ul li{
+        font-size: 2rem;
+        font-weight: 900;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+}
+
+#logIn{
+    width: 120px;
+    height: 4vh;
+    display: grid;
+    place-items: center;
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 2rem;
+    border-style: none;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--red);
+}
+#signUp{
+    width: 120px;
+    height: 4vh;
+    display: grid;
+    place-items: center;
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 2rem;
+    border-style: none;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--dark-blue);
+}
+
+header{
+    height: 10vh;
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+    justify-content: space-between;
+
+    > img{
+        height: 5vh;
+    
+    }
+}
+
+#Banner{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-bottom: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    h1{
+        width: 60vw;
+        color: var(--red);
+        text-align: right;
+        font-size: 7rem;
+    }
+
+    p{
+        width: 60vw;
+        font-weight: 900;
+        color: var(--grey);
+        text-align: right;
+        font-size: 2rem;
+    }
+
+    button{
+        width: 30vw;
+        height: 6vh;
+        font-size: 1.7rem;
+        color: white;
+        border-radius: 4rem;
+        border-style: none;
+        text-decoration: none;
+        font-weight: bold;
+        background-color: var(--dark-blue);
+    }
+
+    section{
+        display: flex;
+        width: 50vw;
+        height: 35vh;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    
+    img{
+        display: flex;
+        width: 750px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+#Servicio{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 150px;
+
+    h1{
+        font-size: 6rem;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+
+    img{
+        width: 65vw;
+    }
+
+}
+
+#Equipo{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 150px;
+
+    h1{
+        font-size: 6rem;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+}
+
+
+#QS{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 150px;
+
+    h1{
+        font-size: 6rem;
+        text-align: center;
+        color: var(--dark-blue); 
+    }
+
+    img{
+        width: 35vw;
+    }
+
+    section{
+        display: flex;
+        width: 85vw;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    p{
+        width: 40vw;
+        color: var(--grey);
+        text-align: right;
+        font-size: 3.2rem;
+    }
+}
+
+.circulo{
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10rem;
+    background-color: var(--red);
+}
+
+.Integrante{
+    width: 15vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    img{
+        width: 9vw;
+        height: 9vw;
+    }
+
+    h3{
+        font-size: 2.3rem;
+        font-weight: 900;
+        text-align: center;
+        color: var(--red); 
+    }
+
+    p{
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-align: center;
+        color: var(--grey); 
+    }
+}
+
+#Nosotros{
+    display: flex;
+}
+
+.submit{
+    display: flex;
+    justify-content: space-between;
+
+    a{
+        width: 10vw;
+        height: 3vw;
+        display: grid;
+        place-items: center;
+        font-size: 1.8rem;
+        color: white;
+        border-radius: 4rem;
+        border-style: none;
+        text-decoration: none;
+        font-weight: bold;
+        background-color: var(--light-red);
+    }
+
+    h3{
+        display: flex;
+        font-size: 1.8rem;
+        color: var(--grey);
+    }
+}
+
+.LogIn{
+    width: 40vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    margin-left: 6vw;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    > img{
+        width: 12vw;
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+
+    span{
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 25px;
+    }
+
+    input{
+        height: 5vh;
+        font-size: 2rem;
+        color: var(--grey);
+        background: rgba(255,255,255,0);
+        width: inherit;
+        border: none;
+        border-bottom: 5px solid var(--dark-blue);
+        margin-bottom: 30px;
+        appearance: none;
+        outline: none;
+    }
+    
+}
+
+
+.user-side{
+    display: grid;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    justify-items: center;
+}
+
+.top-part{
+    grid-area: i;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p{
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: var(--dark-blue);
+    }
+
+    p span{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 20rem;
+        height: 5rem;
+        background-image: url(../Assets/logo.svg);
+        background-position: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.circulo{
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    background-color: var(--dark-blue);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10rem;   
+
+    a{
+        display: flex;
+        align-items: center;
+    }
+
+    a > img{
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+.information-part{
+    display: grid;
+    height: 90vh;
+    width: 95vw;
+    grid-template-areas: 
+                "i i i i i"
+                "b b a c c"
+                "d d e c c"
+                "d d f c c";
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
+
+.section{
+    display: grid;
+    place-items: center;
+    padding: 3rem;
+    font-size: 3rem;
+    border:6px solid var(--dark-blue);
+    border-radius: 2rem;
+
+    > p{
+        block-size: fit-content;
+        text-align: center;
+        font-weight: 900;
+    }
+}
+
+.sleep{
+    grid-area: d;
+    background-color: var(--clear-night);
+
+    section{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    section p{
+        margin-left: 8rem;
+        font-size: 15rem;
+        font-weight: 900;
+        color: #14162a;
+    }
+}
+
+.horas{
+    grid-area: b;
+    justify-content: center;
+    background-color: var(--beishe);
+}
+
+.coffee{
+    grid-area: c;
+
+    section p{
+        color: #7b4b27;
+        font-size: 7rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    section{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section img{
+        height: 80%;
+    }
+}
+
+.cup{
+    grid-area: f;
+    place-items: center;
+    color: white;
+    background-color: #5faef9;
+}
+
+#cupSize, #doorNumber{
+    font-size: 4rem;
+}
+
+.door{
+    grid-area: e;
+    place-items: center;
+    color: white;
+    background-color: #eb4f4d;
+}
+
+.sensor{
+    grid-area: a;
+}
+
+.sensores{
+    display: grid;
+    row-gap: 2rem;
+    place-self: center;
+
+    p{
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+    span{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 4.5rem;
+        height: 4.5rem;
+        background-image: url(../Assets/sensor-icon.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+#carouselExampleControls{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+$carousel-control-color:             $white;
+$carousel-control-width:             15%;
+$carousel-control-opacity:           .5;
+$carousel-control-hover-opacity:     .9;
+$carousel-control-transition:        opacity .15s ease;
+
+$carousel-indicator-width:           30px;
+$carousel-indicator-height:          3px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer:          3px;
+$carousel-indicator-opacity:         .5;
+$carousel-indicator-active-bg:       $white;
+$carousel-indicator-active-opacity:  1;
+$carousel-indicator-transition:      opacity .6s ease;
+
+$carousel-caption-width:             70%;
+$carousel-caption-color:             $white;
+$carousel-caption-padding-y:         1.25rem;
+$carousel-caption-spacer:            1.25rem;
+
+$carousel-control-icon-width:        2rem;
+
+$carousel-control-prev-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+$carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+
+$carousel-transition-duration:       .6s;
+$carousel-transition:                transform $carousel-transition-duration ease-in-out; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
+
+$carousel-dark-indicator-active-bg:  $black;
+$carousel-dark-caption-color:        $black;
+$carousel-dark-control-icon-filter:  invert(1) grayscale(100);
