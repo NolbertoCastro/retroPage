@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./scss/styles.scss">
-    <title>Bootstrap w/ Vite</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Suffe</title>
   </head>
   <body>
-    <header>
+    <section id="contentFULL">
+      <header>
         <img src="../Assets/logo.svg" alt="Logo">
         <nav>
             <ul>
@@ -24,42 +26,23 @@
         <section>
             <h1>Consume cuando lo necesitas, disfruta mientras lo vives</h1>
         <p>Atrevete a conocer los beneficios de conocer tus hábitos de consumo</p>
-        <button>Descubre más del mundo que diseñamos para ti</button>
+        <button id="changePageButton">Descubre más del mundo que diseñamos para ti</button>
         </section>
     </section>
     <section id="QS">
         <h1>¿Quiénes Somos?</h1>
         <section>
             <img src="../Assets/reloj.png" alt="Reloj">
-            <p>SUFEE es una compañía creada en el año 2022 por un grupo de estudiantes los cuales buscar solucionar problemas diarias de las personas, en este caso el café, a  través de tecnología del internet de las cosas, podremos ayudarte a automatizar tu consumo de café, para que solo tengas que tomar el vaso y  disfrutar sin presionar nada. </p>
-        </section>
+            <section class="QSSide">
+              <p id="QSexplication">SUFEE es una compañía creada en el año 2022 por un grupo de estudiantes los cuales buscar solucionar problemas diarias de las personas, en este caso el café, a  través de tecnología del internet de las cosas, podremos ayudarte a automatizar tu consumo de café, para que solo tengas que tomar el vaso y  disfrutar sin presionar nada. </p>
+              <button onclick="changeLanguage()">Translate to English</button>
+            </section>
+          </section>
     </section>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="./Assets/bg1.png">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="./Assets/bg2.png">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="./Assets/bg3.png">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+    <div class="ButtonPart">
+      <div id="liveAlertPlaceholder"></div>
+      <button type="button" class="btn btn-primary" id="liveAlertBtn">Click for a Surprise</button>
+    </div>
     <section id="Servicio">
         <h1>Servicio</h1>
         <img src="../Assets/process.svg" alt="proceso">
@@ -68,5 +51,60 @@
         <img src="./Assets/logo blanco.svg" alt="logo blanco">
         <h3>Copyright ©2022</h3>
     </footer>
+    </section>
+    <script>
+      const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+      const alert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+          `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+          `   <div>${message}</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+      }
+
+      const alertTrigger = document.getElementById('liveAlertBtn')
+      if (alertTrigger) {
+        alertTrigger.addEventListener('click', () => {
+          alert('Enjoy the best coffee in the world!', 'success')
+        })
+      }
+
+      function changeLanguage() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          document.getElementById("QSexplication").innerHTML = this.responseText;
+        };
+        xhttp.open("GET", "translation.txt", true);
+        xhttp.send();
+      }
+
+      $('#changePageButton').click( () => {
+        $("#contentFULL").replaceWith(`<img src="../Assets/LogIn image.png" alt="3D image">
+    <section class="LogIn">
+        <a href="../HTML/index.html"><img src="../Assets/logo.svg" alt="logo SUFEE"></a>
+        <section>
+            <form action="">
+                <label for="nombre">
+                    <span>Nombre:</span>
+                    <input type="text" id="nombre" placeholder="Javier Hernandez"/>
+                </label>
+                <label for="correo">
+                    <span>Correo:</span>
+                    <input type="text" id="correo" placeholder="Javier@gmail.com"/>
+                </label>
+            </form>
+        </section>
+        <section class="submit">
+            <h3>¿Has olvidado tu contraseña?</h3>
+            <a href="../HTML/user.html" >Iniciar Sesión</a>
+        </section>
+    </section>`);
+      })
+    </script>
   </body>
 </html>

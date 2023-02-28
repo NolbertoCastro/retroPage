@@ -537,6 +537,47 @@ label{
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
+
+.ButtonPart{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    align-self: center;
+    margin-bottom: 100px;
+
+    >button{
+        font-size: 40px;
+        background-color: #D44438;
+        border: none;
+    }
+
+    >button:hover{
+        background-color: #87251c;
+    }
+
+    >div div{
+        background-color: #dac1ea;
+        color:#13162A;
+        border: none;
+    }
+    
+}
+
+.QSSide{
+    display: flex;
+    flex-direction: column;
+
+    button{
+        font-size: 20px;
+        color:#F8F2EE;
+        background-color: #D44438;
+        border: none;
+        padding: 5px 20px 5px 20px;
+    }
+}
 $carousel-control-color:             $white;
 $carousel-control-width:             15%;
 $carousel-control-opacity:           .5;
@@ -564,7 +605,3 @@ $carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://
 
 $carousel-transition-duration:       .6s;
 $carousel-transition:                transform $carousel-transition-duration ease-in-out; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
-
-$carousel-dark-indicator-active-bg:  $black;
-$carousel-dark-caption-color:        $black;
-$carousel-dark-control-icon-filter:  invert(1) grayscale(100);
